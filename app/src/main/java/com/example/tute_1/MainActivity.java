@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     /**called when the user taps the send button*/
     public void sendMessage(View view){
         //do something in response to button
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        Intent intent = new Intent(this, Display_message.class);
+        //give the id of the text in the brackets
         EditText editText = (EditText) findViewById(R.id.et_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
